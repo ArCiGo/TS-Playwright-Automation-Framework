@@ -14,6 +14,7 @@ export class SLProductPage {
 
     // Actions
     async headerIsDisplayed() {
-        await expect(this.titleHeader).toBeVisible();
+        // await expect(this.titleHeader).toBeVisible();
+        return await this.titleHeader.isVisible();
     }
 }

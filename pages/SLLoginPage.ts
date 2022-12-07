@@ -7,6 +7,7 @@ export class SLLoginPage {
     readonly usernameField: Locator;
     readonly passwordField: Locator;
     readonly loginButton: Locator;
+    readonly errorMessageLabel: Locator;
 
     // Constructor
     constructor(page: Page) {
@@ -14,6 +15,7 @@ export class SLLoginPage {
         this.usernameField = page.locator('#user-name');
         this.passwordField = page.locator('#password');
         this.loginButton = page.locator('#login-button');
+        this.errorMessageLabel = page.locator('[data-test="error"]');
     }
 
     // Actions
@@ -25,13 +27,9 @@ export class SLLoginPage {
         await this.usernameField.fill(username);
         await this.passwordField.fill(password);
         await this.loginButton.click();
-        // await this.clickOnLoginButton();
     }
 
-    async clickOnLoginButton() {
-        await Promise.all([
-            this.page.waitForNavigation(),
-            this.loginButton.click()
-        ]);
+    async getErrorMessage() {
+        return await this.errorMessageLabel.textContent();
     }
 }
