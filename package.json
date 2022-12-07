@@ -1,0 +1,17 @@
+{
+  "name": "ts-playwright-automation-framework",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "execute:tests": "npx playwright test",
+    "execute:report": "npx playwright show-report",
+    "playwright:all": "npm run execute:tests && npm run execute:report"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.28.1"
+  }
+}
