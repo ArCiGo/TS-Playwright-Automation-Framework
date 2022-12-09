@@ -7,6 +7,7 @@ export class SLProductPage {
     readonly titleHeader: Locator;
     readonly itemsText: Locator;
     readonly itemsButton: Locator;
+    readonly cartLinkButton: Locator;
 
     // Constructor
     constructor(page: Page) {
@@ -14,6 +15,7 @@ export class SLProductPage {
         this.titleHeader = page.locator('.title');
         this.itemsText = page.locator('.inventory_item div[class="inventory_item_description"] div[class="inventory_item_name"]');
         this.itemsButton = page.locator('button[class*="btn btn_primary"]');
+        this.cartLinkButton = page.locator('.shopping_cart_link')
     }
 
     // Actions
@@ -32,5 +34,9 @@ export class SLProductPage {
                 }
             }
         }
+    }
+
+    async clickOnShoppingCartButton() {
+        await this.cartLinkButton.click();
     }
 }

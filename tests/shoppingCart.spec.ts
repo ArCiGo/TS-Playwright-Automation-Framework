@@ -18,4 +18,5 @@ test('as a user I should be able to print all items in the page', async() => {
 
     await slLoginPage.fillLoginForm('standard_user', 'secret_sauce');
     await slProductPage.addItemsToCart(items);
+    await slProductPage.clickOnShoppingCartButton();
 });
