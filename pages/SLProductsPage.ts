@@ -29,7 +29,7 @@ export class SLProductPage {
 
         for(var i = 0; i < items.length; i ++) {
             for(var j = 0; j < listOfItems.length; j ++) {
-                if(items[i] == listOfItems[j].trim()) {
+                if(items[i] === listOfItems[j].trim()) {
                     await this.itemsButton.nth(j).click();
                 }
             }
