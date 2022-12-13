@@ -8,6 +8,8 @@ export class SLProductPage {
     readonly itemsText: Locator;
     readonly itemsButton: Locator;
     readonly cartLinkButton: Locator;
+    readonly menuButton: Locator;
+    readonly logoutLinkButton: Locator;
 
     // Constructor
     constructor(page: Page) {
@@ -15,7 +17,9 @@ export class SLProductPage {
         this.titleHeader = page.locator('.title');
         this.itemsText = page.locator('.inventory_item div[class="inventory_item_description"] div[class="inventory_item_name"]');
         this.itemsButton = page.locator('button[class*="btn btn_primary"]');
-        this.cartLinkButton = page.locator('.shopping_cart_link')
+        this.cartLinkButton = page.locator('.shopping_cart_link');
+        this.menuButton = page.locator('#react-burger-menu-btn');
+        this.logoutLinkButton = page.locator('#logout_sidebar_link');
     }
 
     // Actions
@@ -38,5 +42,13 @@ export class SLProductPage {
 
     async clickOnShoppingCartButton() {
         await this.cartLinkButton.click();
+    }
+
+    async clickOnMenuButton() {
+        await this.menuButton.click();
+    }
+
+    async clickOnLogoutLinkButton() {
+        await this.logoutLinkButton.click();
     }
 }
