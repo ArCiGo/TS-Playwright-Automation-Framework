@@ -28,7 +28,7 @@ test.beforeEach(async ({ page }) => {
 test('as a user I should be able to print all items in the page', async() => {
     let items: string[] = ['Test.allTheThings() T-Shirt (Red)', 'Sauce Labs Backpack']
 
-    await slLoginPage.fillLoginForm('standard_user', 'secret_sauce');
+    await slLoginPage.fillLoginForm(process.env.USERNAME as string, process.env.PASSWORD as string);
     await slProductPage.addItemsToCart(items);
     await slProductPage.clickOnShoppingCartButton();
     
