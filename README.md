@@ -2,13 +2,11 @@
 
 The goal of this project was to put into practice my knowledge using this amazing tool for automation testing.
 
-<!---
-*Do you want to create a framework based on this project? Check this [branch](https://github.com/ArCiGo/TS-Automation-Framework/tree/master)!*
---->
+**Before you continue reading:** You can check in this repository a sample made with [TS](https://github.com/ArCiGo/TS-Playwright-Automation-Framework/tree/AutomationFrameworkSample_TS).
 
 ## The project 💻
 
-The **SWAG Labs/Sauce Demo** store, from **Sauce Labs**, was automated using *TS + Playwright*. It generates an HTML report for passed and failed tests. Also, this project has **GitHub Action**s.
+A *Playwright* template to create new automation framework projects!
 
 ## Tools ⚙️
 
@@ -23,16 +21,10 @@ The **SWAG Labs/Sauce Demo** store, from **Sauce Labs**, was automated using *TS
 │   └── workflows/
 │       └── playwright.yml
 ├── pages/
-│   ├── SLCartPage.ts
-│   ├── SLCheckoutCompletePage.ts
-│   ├── SLCheckoutInformationPage.ts
-│   ├── SLCheckoutOverviewPage.ts
-│   ├── SLLoginPage.ts
-│   └── SLProductPage.ts
+│   ├── GoogleHomePage.ts
+│   ├── GoogleResultsPage.ts
 ├── tests/
-│   ├── login.spec.ts
-│   ├── logout.spec.ts
-│   └── shoppingCart.spec.ts
+│   ├── sample.spec.ts
 ├── .env.template
 ├── package.json
 └── playwright.config.ts
@@ -47,13 +39,13 @@ The following steps can be executed using a terminal (I use [hyper](https://hype
 ```bash
 > git clone https://github.com/ArCiGo/TS-Playwright-Automation-Framework.git
 
-> git checkout AutomationFrameworkSample_TS
+> git checkout master
 ```
 
 2. In the path you cloned the repo, open the project folder and install the packages.-
 
 ```bash
-> cd TS-Automation-Framework
+> cd TS-Playwright-Automation-Framework
 
 > npm i
 ```
@@ -75,4 +67,3 @@ The following steps can be executed using a terminal (I use [hyper](https://hype
 When you execute the command to see the report, a new folder is generated at root level (**playwright-report**). This folder contains the report for the executed tests.
 
 ![UI Report Sample](./Image01.png)
-![UI Report Sample](./Image02.png)
