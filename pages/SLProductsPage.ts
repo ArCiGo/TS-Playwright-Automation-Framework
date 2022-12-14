@@ -14,7 +14,7 @@ export class SLProductPage {
     // Constructor
     constructor(page: Page) {
         this.page = page;
-        this.titleHeader = page.locator('.title');
+        this.titleHeader = page.locator('//span[@class="title" and contains(text(), "Products")]');
         this.itemsText = page.locator('.inventory_item div[class="inventory_item_description"] div[class="inventory_item_name"]');
         this.itemsButton = page.locator('button[class*="btn btn_primary"]');
         this.cartLinkButton = page.locator('.shopping_cart_link');
