@@ -4,6 +4,7 @@ dotenv.config();
 
 import { SLLoginPage } from '../pages/SLLoginPage';
 import { SLProductPage } from '../pages/SLProductsPage';
+import { messages } from '../tests/data/testData'
 
 let slLoginPage: SLLoginPage;
 let slProductPage: SLProductPage;
@@ -23,20 +24,20 @@ test('as a user I should be able to login into the store', async() => {
 
 test('as a user I shouldn\'t be able to login into the store using a locked username', async() => {
     await slLoginPage.fillLoginForm(process.env.LOCKED_USERNAME as string, process.env.PASSWORD as string);
-    expect(await slLoginPage.getErrorMessage()).toBe(process.env.LOCKED_OUT_MESSAGE as string);
+    expect(await slLoginPage.getErrorMessage()).toBe(messages.lockedOutMessage);
 });
 
 test('as a user I shouldn\'t be able to login into the store with invalid credentials', async() => {
     await slLoginPage.fillLoginForm(process.env.INVALID_USERNAME as string, process.env.INVALID_PASSQORD as string);
-    expect(await slLoginPage.getErrorMessage()).toBe(process.env.INVALID_CREDENTIALS_MESSAGE as string);
+    expect(await slLoginPage.getErrorMessage()).toBe(messages.invalidCredentialsMessage);
 });
 
 test('as a user I shouldn\'t be able to login into the store without password', async() => {
     await slLoginPage.fillLoginForm(process.env.USERNAME as string, '');
-    expect(await slLoginPage.getErrorMessage()).toBe(process.env.PASSWORD_MESSAGE as string);
+    expect(await slLoginPage.getErrorMessage()).toBe(messages.passwordMessage);
 });
 
 test('as a user I shouldn\'t be able to login into the store without username', async() => {
     await slLoginPage.fillLoginForm('', process.env.PASSWORD as string);
-    expect(await slLoginPage.getErrorMessage()).toBe(process.env.USERNAME_MESSAGE as string);
+    expect(await slLoginPage.getErrorMessage()).toBe(messages.usernameMessage);
 });
