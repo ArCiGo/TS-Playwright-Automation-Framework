@@ -67,3 +67,7 @@ The following steps can be executed using a terminal (I use [hyper](https://hype
 When you execute the command to see the report, a new folder is generated at root level (**playwright-report**). This folder contains the report for the executed tests.
 
 ![UI Report Sample](./Image01.png)
+
+## Collaborations 👨‍🏭
+
+Do you want to collaborate or contribute in this project? No problem! I'm open to improvements, comments and suggestions. Just do a PR with your suggestions and we can discuss them 😀
