@@ -68,6 +68,35 @@ When you execute the command to see the report, a new folder is generated at roo
 
 ![UI Report Sample](./Image01.png)
 
+## Docker 🐋
+
+If you want to execute the tests using Docker, you can do the following in your terminal at the workspace project.-
+
+```shell
+# Without a Dockerfile
+
+# Pulling the Playwright image. You can use the latest one
+> docker pull mcr.microsoft.com/playwright:v1.28.0-focal
+
+# Then, execute the following command to start an interactive bash sesion inside of the container 
+> docker run -v $PWD:/tests -w /tests --rm -it mcr.microsoft.com/playwright:v1.28.0-focal /bin/bash
+
+# Now, execute the following commands inside of the interactive bash
+> npm i
+> npx playwright install    # install browsers
+> npx playwright test
+```
+
+```shell
+# With a Dockerfile
+
+# Execute the following command to compile the file
+> docker build -t tests-playwright .
+
+# Then, execute the following command to run the tests inside of the container
+> docker run -it --name testsplaywright tests-playwright
+```
+
 ## Collaborations 👨‍🏭
 
 Do you want to collaborate or contribute in this project? No problem! I'm open to improvements, comments and suggestions. Just do a PR with your suggestions and we can discuss them 😀
