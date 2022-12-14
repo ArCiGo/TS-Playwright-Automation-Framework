@@ -2,9 +2,7 @@
 
 The goal of this project was to put into practice my knowledge using this amazing tool for automation testing.
 
-<!---
-*Do you want to create a framework based on this project? Check this [branch](https://github.com/ArCiGo/TS-Automation-Framework/tree/master)!*
---->
+*Do you want to create a framework based on this project? Check this [branch](https://github.com/ArCiGo/TS-Playwright-Automation-Framework/tree/master)!*
 
 ## The project 💻
 
@@ -53,7 +51,7 @@ The following steps can be executed using a terminal (I use [hyper](https://hype
 2. In the path you cloned the repo, open the project folder and install the packages.-
 
 ```bash
-> cd TS-Automation-Framework
+> cd TS-Playwright-Automation-Framework
 
 > npm i
 ```

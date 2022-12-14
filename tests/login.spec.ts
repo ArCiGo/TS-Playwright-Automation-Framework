@@ -23,20 +23,20 @@ test('as a user I should be able to login into the store', async() => {
 
 test('as a user I shouldn\'t be able to login into the store using a locked username', async() => {
     await slLoginPage.fillLoginForm(process.env.LOCKED_USERNAME as string, process.env.PASSWORD as string);
-    expect(await slLoginPage.getErrorMessage()).toBe('Epic sadface: Sorry, this user has been locked out.');
+    expect(await slLoginPage.getErrorMessage()).toBe(process.env.LOCKED_OUT_MESSAGE as string);
 });
 
 test('as a user I shouldn\'t be able to login into the store with invalid credentials', async() => {
     await slLoginPage.fillLoginForm(process.env.INVALID_USERNAME as string, process.env.INVALID_PASSQORD as string);
-    expect(await slLoginPage.getErrorMessage()).toBe('Epic sadface: Username and password do not match any user in this service');
+    expect(await slLoginPage.getErrorMessage()).toBe(process.env.INVALID_CREDENTIALS_MESSAGE as string);
 });
 
 test('as a user I shouldn\'t be able to login into the store without password', async() => {
     await slLoginPage.fillLoginForm(process.env.USERNAME as string, '');
-    expect(await slLoginPage.getErrorMessage()).toBe('Epic sadface: Password is required');
+    expect(await slLoginPage.getErrorMessage()).toBe(process.env.PASSWORD_MESSAGE as string);
 });
 
 test('as a user I shouldn\'t be able to login into the store without username', async() => {
     await slLoginPage.fillLoginForm('', process.env.PASSWORD as string);
-    expect(await slLoginPage.getErrorMessage()).toBe('Epic sadface: Username is required');
+    expect(await slLoginPage.getErrorMessage()).toBe(process.env.USERNAME_MESSAGE as string);
 });
