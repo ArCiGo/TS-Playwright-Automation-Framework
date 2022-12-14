@@ -2,7 +2,7 @@
 
 The goal of this project was to put into practice my knowledge using this amazing tool for automation testing.
 
-**Before you continue reading:** You can check in this repository a sample made with [TS](https://github.com/ArCiGo/TS-Playwright-Automation-Framework/tree/AutomationFrameworkSample_TS).
+**Before you continue reading:** *You can check in this repository a sample made with [TS](https://github.com/ArCiGo/TS-Playwright-Automation-Framework/tree/AutomationFrameworkSample_TS).*
 
 ## The project 💻
 
