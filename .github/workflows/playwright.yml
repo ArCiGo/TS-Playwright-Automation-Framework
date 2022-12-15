@@ -13,7 +13,7 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: 16
-    - name: Writing cypress.env.json file
+    - name: Writing .env file
       run: |
         echo '${{ secrets.PLAYWRIGHT_ENV_CI }}' > .env
     - name: Install dependencies
