@@ -13,6 +13,9 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: 16
+    - name: Writing cypress.env.json file
+      run: |
+        echo '${{ secrets.PLAYWRIGHT_ENV_CI }}' > .env
     - name: Install dependencies
       run: npm ci
     - name: Install Playwright Browsers

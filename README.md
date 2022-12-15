@@ -58,6 +58,20 @@ The following steps can be executed using a terminal (I use [hyper](https://hype
 
 3. Before to execute the tests, you need to create a *.env* file at root level. There is a *.env.template* file with the structure that should follow your *.env* file. Just delete the *.template* suffix and fill with the values you want to use.
 
+    For demo purposes, you can fill it with these values.-
+
+```bash
+BASE_URL=https://www.saucedemo.com/
+
+# Credentials
+
+USERNAME=standard_user
+PASSWORD=secret_sauce
+INVALID_USERNAME=invalid_username
+INVALID_PASSQORD=invalid_password
+LOCKED_USERNAME=locked_out_user
+```
+
 ## Run the tests ⚡
 
 ```bash
